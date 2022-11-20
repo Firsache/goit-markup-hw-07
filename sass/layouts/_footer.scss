@@ -1,6 +1,7 @@
 .footer {
   background-color: var(--dark-background-color);
   padding: 60px 0;
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -15,7 +16,6 @@
       text-align: start;
       flex-direction: row;
     }
-    
   }
 
   &__contacts {
@@ -34,7 +34,7 @@
     @include desktop {
       margin-bottom: 9px;
     }
-    
+
     font-style: normal;
   }
 
@@ -70,31 +70,45 @@
       text-align: left;
     }
   }
-
+  &__subscribe {
+    @media screen and (max-width: 1199px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
   &__subscribe-form {
     display: flex;
     flex-direction: column;
-    
+
     gap: 20px;
 
     @include desktop {
       flex-direction: row;
       gap: 12px;
-    }   
+    }
 
     max-width: 570px;
   }
 
-
   &__tablet-container {
-    @media screen and (min-width:768px) and (max-width:1199px){
       display: flex;
+      flex-direction: column;
+      gap: 60px;
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-direction: row;
       justify-content: space-around;
+    }
+    @include desktop {
+      flex-direction: row;
+      gap: 70px;
+      align-items: baseline;
+      text-align: start;
     }
   }
 
   &__join {
-
   }
 }
 
@@ -138,26 +152,31 @@
     &:focus {
       background-color: var(--accent-color);
     }
-    }
-    &__icon {
-        fill: currentColor;
-    }
+  }
+  &__icon {
+    fill: currentColor;
+  }
 }
 
-.subscribe {  
-    &__input {
-        position: relative;
-    }
-    &__input-block {
+.subscribe {
+  &__input {
+    position: relative;
+  }
+  &__input-block {
+    min-height: 50px;
+    padding: 15px 16px;
     background-color: var(--dark-background-color);
     color: var(--primary-white-color);
 
+    @media screen and (max-width: 470px) {
+      width: 270px;
+    }
+    @media screen and (min-width: 470px) and (max-width: 1199px) {
+      width: 450px;
+    }
     @include desktop {
       width: 358px;
     }
-    width: 100%;
-    min-height: 50px;
-    padding: 15px 16px;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
@@ -165,29 +184,28 @@
     line-height: 1.25;
 
     ::placeholder {
-        color: var(--footer-text-color);
+      color: var(--footer-text-color);
     }
-    }
-    &__btn {
-      align-self: center;
-        max-width: 200px;
-        min-height: 50px;
+  }
+  &__btn {
+    align-self: center;
+    max-width: 200px;
+    min-height: 50px;
 
-        @include desktop {
-          min-width: 200px;
-        }
-        padding: 10px 28px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        gap: 10px;
-        border-color: transparent;
-
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    @include desktop {
+      min-width: 200px;
     }
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    border-color: transparent;
 
-    &__btn-icon {
-        fill: currentColor;
-    }
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  &__btn-icon {
+    fill: currentColor;
+  }
 }
