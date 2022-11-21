@@ -407,21 +407,6 @@ img {
   color: var(--accent-color);
 }
 
-.current {
-  color: var(--accent-color);
-  position: relative;
-}
-.current::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent-color);
-}
-
 .auth__link {
   display: flex;
   align-items: center;
@@ -441,11 +426,98 @@ img {
   fill: currentColor;
 }
 
-.menu-open,
-.menu-close {
+.menu-open {
   background-color: transparent;
   border: none;
   margin-left: auto;
+}
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-color: var(--modal-background-color);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.mob-menu__container {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-close {
+  position: absolute;
+  display: block;
+  background-color: transparent;
+  border: none;
+  top: 10;
+  left: 15;
+}
+.menu-close:hover .menu-close-icon {
+  fill: var(--accent-color);
+}
+
+.mob-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.mob-nav__link {
+  font-size: 40px;
+  line-height: 1.175;
+  color: var(--title-text-color);
+}
+
+.mob-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 64px;
+}
+.mob-auth__tel {
+  font-size: 34px;
+  line-height: 1.1764705882;
+  color: var(--accent-color);
+}
+.mob-auth__mail {
+  font-size: 24px;
+  line-height: 1.1666666667;
+  color: var(--primary-text-color);
+}
+
+.mob-soc-list {
+  display: flex;
+  gap: 10px;
+}
+.mob-soc-list__link {
+  font-size: 18px;
+  line-height: 1.22;
+  color: var(--accent-color);
+}
+
+.current {
+  color: var(--accent-color);
+  position: relative;
+}
+.current::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+@media screen and (min-width: 480px) {
+  .current::after {
+    display: none;
+  }
 }
 
 .hero {
