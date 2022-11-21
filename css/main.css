@@ -347,14 +347,35 @@ img {
 .header__container {
   display: flex;
   align-items: center;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  .header__container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 }
 .header__nav {
   margin-left: 93px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__nav {
+    display: block;
+  }
 }
 .header__auth {
   display: flex;
   gap: 50px;
   margin-left: auto;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__auth {
+    display: block;
+  }
 }
 
 .logo {
@@ -418,6 +439,13 @@ img {
 }
 .auth__icon {
   fill: currentColor;
+}
+
+.menu-open,
+.menu-close {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
 }
 
 .hero {

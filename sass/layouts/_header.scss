@@ -4,14 +4,30 @@
   &__container {
     display: flex;
     align-items: center;
+    position: relative;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    @include tablet {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
   }
   &__nav {
     margin-left: 93px;
+    display: none;
+    @include tablet {
+      display: block;
+    }
   }
   &__auth {
     display: flex;
     gap: 50px;
     margin-left: auto;
+    display: none;
+    @include tablet {
+      display: block;
+    }
   }
 }
 .logo {
@@ -91,5 +107,30 @@
   }
   &__icon {
     fill: currentColor;
+  }
+}
+
+.menu-open,
+.menu-close {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+}
+
+.mob-nav {
+  &__list {
+  }
+  &__item {
+  }
+  &__link {
+  }
+}
+
+.mob-auth {
+  &__list {
+  }
+  &__item {
+  }
+  &__link {
   }
 }
